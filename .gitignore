@@ -1,0 +1,21 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/PatStraPro.Dashboard/obj
+/PatStraPro.Dashboard/bin/Debug/net6.0
+/PatStraPro.Common/bin/Debug/net6.0
+/PatStraPro.Common/obj/Debug/net6.0
+/PatStraPro.Common/obj
+/PatStraPro.Db/bin/Debug/net6.0
+/PatStraPro.Db/obj
+/PatStraPro.Entities/obj
+/PatStraPro.Entities/bin/Debug/net6.0
+/PatStraProClient/bin/Debug/net6.0-windows
+/PatStraProClient/obj
+/PatStraProEhrApi/bin/Debug/net6.0
+/PatStraProEhrApi/obj
+/PatStraProMobileApp/bin/Debug
+/PatStraProMobileApp/obj
+/PatStraProWebAPI/bin/Debug/net6.0
+/PatStraProWebAPI/obj

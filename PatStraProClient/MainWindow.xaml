@@ -1,0 +1,42 @@
+﻿<Window x:Class="PatStraProClient.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Header Section -->
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20">
+            <Label Content="Enable Checkbox to use real time Speech recognitions" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <CheckBox Name="chkUseTestData" Foreground="CadetBlue" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <Button Name="btnRecord" Width="100" Height="100" Click="btnRecord_Click">
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Image Source="Images/Mike.jpg" Stretch="Uniform"/>
+                    </ControlTemplate>
+                </Button.Template>
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+        </StackPanel>
+
+        <!-- Details Section -->
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="20">
+            <TextBlock Name="txtRecognizedText" Text="{Binding RecognizedText}" FontWeight="Bold" FontSize="16" Margin="0,0,0,10"/>
+        </StackPanel>
+    </Grid>
+</Window>

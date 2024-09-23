@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PatStraProMobileApp.PatientSpeechInput"
+             Title="PatientSpeechInput">
+    <StackLayout Padding="20" VerticalOptions="CenterAndExpand">
+        <Label Text="Speech Input" FontSize="24" HorizontalOptions="Center" Margin="0,0,0,20" />
+        <Button Text="Start Speaking" Clicked="OnStartSpeakingClicked" BackgroundColor="#2196F3" TextColor="White" CornerRadius="8" Margin="0,0,0,20" />
+        <Label x:Name="TranscriptionLabel" Text="Transcription will appear here" FontSize="18" HorizontalOptions="Center" />
+    </StackLayout>
+</ContentPage>

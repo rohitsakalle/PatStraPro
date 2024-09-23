@@ -1,0 +1,40 @@
+[
+  {
+    "Name": "FullPatStraPro",
+    "Projects": [
+      {
+        "Path": "PatStraPro.Dashboard\\PatStraPro.Dashboard.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "PatStraProClient\\PatStraProClient.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "PatStraProWebAPI\\PatStraProWebAPI.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "PatStraProMobileApp\\PatStraProMobileApp.csproj",
+        "Action": "Start"
+      }
+    ]
+  },
+  {
+    "Name": "AndriodApp",
+    "Projects": [
+      {
+        "Path": "PatStraProMobileApp\\PatStraProMobileApp.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "PatStraProWebAPI\\PatStraProWebAPI.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "PatStraPro.Dashboard\\PatStraPro.Dashboard.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

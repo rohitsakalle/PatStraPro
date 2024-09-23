@@ -1,0 +1,54 @@
+﻿@page "/dashboard"
+@using PatStraPro.Dashboard.Service
+@using PatStraPro.Db
+@inject DashboardService DashboardService
+@inject CosmosDbService CosmosDbService
+
+<h3>Dashboard</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>PatientId</th>
+            <th>Name</th>
+            <th>DateOfBirth</th>
+            <th>ContactNumber</th>
+            <th>Symptoms</th>
+            <th>EmergencyScore</th>
+            <th>Is Checked</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in DashboardService.GetItems())
+        {
+            <tr>
+                <td>@item.PatientId</td>
+                <td>@item.Name</td>
+                <td>@item.DateOfBirth.ToString()</td>
+                <td>@item.ContactNumber</td>
+                <td>@item.Symptoms</td>
+                <td><strong>@item.EmergencyScore</strong></td>
+                <td><input type="checkbox" @bind="item.IsChecked" /></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<button class="btn btn-primary" @onclick="RemoveCheckedItems">Remove Checked Items</button>
+
+@code {
+    protected override async Task OnInitializedAsync()
+    {
+        DashboardService.ClearItems();
+        var items = await CosmosDbService.GetItemsAsync();
+        foreach (var item in items)
+        {
+            DashboardService.AddItem(item);
+        }
+    }
+
+    private void RemoveCheckedItems()
+    {
+        DashboardService.RemoveCheckedItems();
+    }
+}
